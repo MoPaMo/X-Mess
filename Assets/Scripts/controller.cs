@@ -16,6 +16,7 @@ public class controller : MonoBehaviour
     void Update()
     {
         Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
+        direction=direction.normalized;
         character.SimpleMove(direction*playerSpeed);
     }
 }
