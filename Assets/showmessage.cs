@@ -4,18 +4,17 @@ using UnityEngine;
 public class showmessage: MonoBehaviour
 {
     public RectTransform rt;
-    Vector2 pos = Vector2.zero;
-    Vector2 offscreen = Vector2.zero;
+    float pos = 0f;
+    float offscreen = 0f;
     public bool shown = false;
-    Vector2 vel = Vector2.zero;
+    float vel = 0f;
     // Start is called before the first frame update
     void Start()
     {
         //get current position on canvas
-        pos = rt.anchoredPosition;
+        pos = rt.anchoredPosition.x;
         //set offscreen position
-        offscreen.x = -pos.x;
-        offscreen.y = pos.y;
+        offscreen = -pos;
         //log current position
         Debug.Log("current position: " + pos + offscreen);
     }
@@ -24,18 +23,26 @@ public class showmessage: MonoBehaviour
     {
         if (shown)
         {
-            rt.anchoredPosition = Vector2.SmoothDamp(rt.anchoredPosition, pos, ref vel, 0.5f);
+            if(rt.anchoredPosition.x/pos<0.995f){
+            rt.anchoredPosition = new Vector2(Mathf.SmoothDamp(rt.anchoredPosition.x, pos, ref vel, 0.5f), rt.anchoredPosition.y);}
+            else{
+                rt.anchoredPosition = new Vector2(pos, rt.anchoredPosition.y);
+            }
         }
         else
         {
-            rt.anchoredPosition = Vector2.SmoothDamp(rt.anchoredPosition, offscreen, ref vel, 0.5f);
+            if(rt.anchoredPosition.x/offscreen<0.975f){
+            rt.anchoredPosition = new Vector2(Mathf.SmoothDamp(rt.anchoredPosition.x, offscreen, ref vel, 0.5f), rt.anchoredPosition.y);}
+            else{
+                rt.anchoredPosition = new Vector2(offscreen, rt.anchoredPosition.y);
+            }
         }
     }
     //create function message to change position
     public void message()
     {
         //if current position is offscreen, move to onscreen
-        if (rt.anchoredPosition == offscreen)
+        if (rt.anchoredPosition.x == offscreen)
         {
             shown = true;
         }
