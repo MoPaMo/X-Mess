@@ -24,11 +24,11 @@ public class showmessage: MonoBehaviour
     {
         if (shown)
         {
-            rt.anchoredPosition = Vector2.SmoothDamp(rt.anchoredPosition, pos, ref vel, 0.5 f);
+            rt.anchoredPosition = Vector2.SmoothDamp(rt.anchoredPosition, pos, ref vel, 0.5f);
         }
         else
         {
-            rt.anchoredPosition = Vector2.SmoothDamp(rt.anchoredPosition, offscreen, ref vel, 0.5 f);
+            rt.anchoredPosition = Vector2.SmoothDamp(rt.anchoredPosition, offscreen, ref vel, 0.5f);
         }
     }
     //create function message to change position
