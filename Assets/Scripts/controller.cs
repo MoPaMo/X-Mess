@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class controller: MonoBehaviour {
-  //private CharacterController character;
+  public CharacterController character;
   public int playerSpeed = 10;
   private Vector3 direction = Vector3.zero;
   private Vector3 lookDirection = Vector3.zero;
   public float rotTime = 5;
+
+
   // Start is called before the first frame update
-  // get character controller through public variable
-  public CharacterController character;
-
   void Start() {
-   //character = GetComponent(typeof(CharacterController)) as CharacterController;
-
   }
+  
   // Update is called once per frame
   void Update() {    
     direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
