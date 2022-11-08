@@ -17,6 +17,10 @@ public class showmessage: MonoBehaviour
         offscreen = -pos;
         //log current position
         Debug.Log("current position: " + pos + offscreen);
+        if(!shown){
+            //move offscreen
+            rt.anchoredPosition = new Vector2(offscreen, rt.anchoredPosition.y);
+        }
     }
     // Update is called once per frame
     void Update()
