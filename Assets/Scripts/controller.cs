@@ -32,17 +32,6 @@ public class controller: MonoBehaviour
 			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), Time.deltaTime *rotTime);
 		}
 
-		/*
-		 var rot = Quaternion.LookRotation(direction);
-		rot = Quaternion.Slerp(cam.transform.rotation, rot, Time.deltaTime *rotTime);
-		rot = Quaternion.Euler(0, rot.eulerAngles.y, 0);
-		transform.rotation = rot;
-
-		    if (direction!=Vector3.zero) {
-		  Quaternion rotation = Quaternion.LookRotation(direction);
-		  transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime *rotTime);
-		}*/
-
 		Vector3 charPos = character.transform.position;	//current character postiioin
 		charPos.y += 8;	//correct postition to be diagonally above
 		charPos.z -= 8;
