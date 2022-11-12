@@ -29,7 +29,19 @@ public class controller: MonoBehaviour
 
 		if (lookDirection != Vector3.zero)
 		{
-			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), Time.deltaTime *rotTime);
+			// if the difference between the current rotation and the look direction is greater than 0.1, rotate the player
+			if (Vector3.Angle(transform.forward, lookDirection) > 1)
+			{
+				//rotate the player
+				transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), rotTime * Time.deltaTime);
+			}
+			//set to current rotation if difference is less than 1 but exists
+			else if (transform.rotation != Quaternion.LookRotation(lookDirection))
+			{
+				//rotate the player
+				transform.rotation = Quaternion.LookRotation(lookDirection);
+			}
+			
 		}
 
 		Vector3 charPos = character.transform.position;	//current character postiioin
