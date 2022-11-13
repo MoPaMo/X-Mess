@@ -9,9 +9,21 @@ public class controller: MonoBehaviour
 	private Vector3 direction = Vector3.zero;
 	private Vector3 lookDirection = Vector3.zero;
 	public float rotTime = 5;
-
+	public bool isInHouse = false;
 	// Start is called before the first frame update
 	void Start() {}
+
+	    void OnTriggerEnter(Collider other) {  
+        //check if the collider has the door tag
+				if (other.gameObject.CompareTag("Door")) {
+			//get the door properties
+			DoorProperties doorProperties = other.gameObject.GetComponent<DoorProperties>();
+			//set the teleport position
+			character.Move(doorProperties.teleportPosition - transform.position);	 
+			//set is inside house
+			isInHouse = doorProperties.leadingInside;
+		} 
+    }  
 
 	// Update is called once per frame
 	void Update()
