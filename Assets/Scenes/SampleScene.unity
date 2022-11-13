@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ich bin klein hh das hab ich bestimmt gesagt
+  m_text: "Ich bin klein h\xF6h\xF6 das hab ich bestimmt gesagt"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f93b26875ca1c476b82c8a789bceb928, type: 2}
   m_sharedMaterial: {fileID: 3546988192845175881, guid: f93b26875ca1c476b82c8a789bceb928, type: 2}
@@ -1253,7 +1253,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30.8
+  m_fontSize: 29.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
