@@ -14,7 +14,7 @@ public class showmessage: MonoBehaviour
         //get current position on canvas
         pos = rt.anchoredPosition.x;
         //set offscreen position
-        offscreen = -pos;
+        offscreen = -1.2f*pos;
         //log current position
         Debug.Log("current position: " + pos + offscreen);
         if(!shown){
