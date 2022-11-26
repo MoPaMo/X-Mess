@@ -12,6 +12,7 @@ public class controller : MonoBehaviour
     public bool isInHouse = false;
 
     private bool isInteractable = false;
+    private GameObject interactableObj = null;
     public sb_thrower thrower;
     // Start is called before the first frame update
     void Start() { }
@@ -30,7 +31,9 @@ public class controller : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Interactable"))
         {
+
             isInteractable = true;
+            interactableObj = other.gameObject;
         }
     }
     void OnTriggerExit(Collider other)
@@ -38,6 +41,7 @@ public class controller : MonoBehaviour
         if (other.gameObject.CompareTag("Interactable"))
         {
             isInteractable = false;
+            interactableObj = null;
         }
     }
 
@@ -76,7 +80,10 @@ public class controller : MonoBehaviour
         charPos.y += 8; //correct postition to be diagonally above
         charPos.z -= 8;
         cam.transform.position = charPos;
-
+        if (Input.GetKeyDown(KeyCode.F) && isInteractable)
+        {
+            Debug.Log(interactableObj.GetComponent<DialogueProperties>().dialog);
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) != Vector3.zero)
