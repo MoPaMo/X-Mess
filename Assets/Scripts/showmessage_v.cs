@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class showmessage: MonoBehaviour
+public class showmessage_h : MonoBehaviour
 {
     public RectTransform rt;
     float pos = 0f;
@@ -14,10 +14,11 @@ public class showmessage: MonoBehaviour
         //get current position on canvas
         pos = rt.anchoredPosition.x;
         //set offscreen position
-        offscreen = -1.2f*pos;
+        offscreen = -1.2f * pos;
         //log current position
         Debug.Log("current position: " + pos + offscreen);
-        if(!shown){
+        if (!shown)
+        {
             //move offscreen
             rt.anchoredPosition = new Vector2(offscreen, rt.anchoredPosition.y);
         }
@@ -27,17 +28,23 @@ public class showmessage: MonoBehaviour
     {
         if (shown)
         {
-            if(rt.anchoredPosition.x/pos<0.995f){
-            rt.anchoredPosition = new Vector2(Mathf.SmoothDamp(rt.anchoredPosition.x, pos, ref vel, 0.5f), rt.anchoredPosition.y);}
-            else{
+            if (rt.anchoredPosition.x / pos < 0.995f)
+            {
+                rt.anchoredPosition = new Vector2(Mathf.SmoothDamp(rt.anchoredPosition.x, pos, ref vel, 0.5f), rt.anchoredPosition.y);
+            }
+            else
+            {
                 rt.anchoredPosition = new Vector2(pos, rt.anchoredPosition.y);
             }
         }
         else
         {
-            if(rt.anchoredPosition.x/offscreen<0.975f){
-            rt.anchoredPosition = new Vector2(Mathf.SmoothDamp(rt.anchoredPosition.x, offscreen, ref vel, 0.5f), rt.anchoredPosition.y);}
-            else{
+            if (rt.anchoredPosition.x / offscreen < 0.975f)
+            {
+                rt.anchoredPosition = new Vector2(Mathf.SmoothDamp(rt.anchoredPosition.x, offscreen, ref vel, 0.5f), rt.anchoredPosition.y);
+            }
+            else
+            {
                 rt.anchoredPosition = new Vector2(offscreen, rt.anchoredPosition.y);
             }
         }
