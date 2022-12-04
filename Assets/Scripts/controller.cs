@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class controller : MonoBehaviour
 {
-    public CharacterController character;
+    public Rigidbody character;
     public int playerSpeed = 10;
     private Vector3 direction = Vector3.zero;
     private Vector3 lookDirection = Vector3.zero;
@@ -29,8 +29,8 @@ public class controller : MonoBehaviour
         {
             //get the door properties
             DoorProperties doorProperties = other.gameObject.GetComponent<DoorProperties>();
-            //set the teleport position
-            character.Move(doorProperties.teleportPosition - transform.position);
+            transform.position = doorProperties.teleportPosition;
+
             //set is inside house
             isInHouse = doorProperties.leadingInside;
         }
@@ -55,8 +55,11 @@ public class controller : MonoBehaviour
     {
         direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
         direction = direction.normalized;
-
-        character.SimpleMove(direction * playerSpeed);
+        //move the character
+        if (direction != Vector3.zero)
+        {
+            character.MovePosition(transform.position + direction * playerSpeed * Time.deltaTime);
+        }
         //define look direction, that's not set to 0 if the player is not moving
         if (new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) != Vector3.zero)
         {
