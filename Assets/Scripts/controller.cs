@@ -15,7 +15,12 @@ public class controller : MonoBehaviour
     private GameObject interactableObj = null;
     public sb_thrower thrower;
     // Start is called before the first frame update
-    void Start() { }
+    private GameObject cam;
+
+    void Start()
+    {
+        cam = GameObject.Find("Main Camera");
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -52,7 +57,6 @@ public class controller : MonoBehaviour
         direction = direction.normalized;
 
         character.SimpleMove(direction * playerSpeed);
-        var cam = GameObject.Find("Main Camera");
         //define look direction, that's not set to 0 if the player is not moving
         if (new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) != Vector3.zero)
         {
