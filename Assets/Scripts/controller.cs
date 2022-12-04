@@ -83,7 +83,21 @@ public class controller : MonoBehaviour
         Vector3 charPos = character.transform.position; //current character postiioin
         charPos.y += 8; //correct postition to be diagonally above
         charPos.z -= 8;
-        cam.transform.position = charPos;
+        if (cam.transform.position != charPos)
+        {
+
+            cam.transform.position = charPos;
+
+            /*Ray r = new Ray(cam.transform.position, cam.transform.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(r, out hit))
+            {
+                if (hit.collider.gameObject != gameObject)
+                {
+                    hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 0.5f);
+                }
+            }*/
+        }
         if (Input.GetKeyDown(KeyCode.F) && isInteractable)
         {
             Debug.Log(interactableObj.GetComponent<DialogueProperties>().dialog);
