@@ -55,11 +55,6 @@ public class controller : MonoBehaviour
     {
         direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
         direction = direction.normalized;
-        //move the character
-        if (direction != Vector3.zero)
-        {
-            character.MovePosition(transform.position + direction * playerSpeed * Time.deltaTime);
-        }
         //define look direction, that's not set to 0 if the player is not moving
         if (new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) != Vector3.zero)
         {
@@ -111,6 +106,13 @@ public class controller : MonoBehaviour
                 thrower.Throw(direction);
             else
                 thrower.Throw(transform.forward);
+        }
+    }
+    void FixedUpdate()
+    {
+        if (direction != Vector3.zero)
+        {
+            character.MovePosition(transform.position + direction * playerSpeed * Time.deltaTime);
         }
     }
 }
