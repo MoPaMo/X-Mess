@@ -6,7 +6,7 @@ public class controller : MonoBehaviour
 {
     public Rigidbody character;
     public int playerSpeed = 10;
-    private Vector3 direction = Vector3.zero;
+    private Vector3 inputDirection = Vector3.zero;
     private Vector3 lookDirection = Vector3.zero;
     public float rotTime = 5;
     public bool isInHouse = false;
@@ -53,27 +53,24 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
-        direction = direction.normalized;
-        //define look direction, that's not set to 0 if the player is not moving
-        if (new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) != Vector3.zero)
+        var d = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
+        inputDirection = d.normalized;
+        //define look direction, that's true (not set to 0) if the player is not moving
+        if (d != Vector3.zero)
         {
-            lookDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
-        }
+            lookDirection = d; //set direction
 
-        if (lookDirection != Vector3.zero)
-        {
             // if the difference between the current rotation and the look direction is greater than 0.1, rotate the player
             if (Vector3.Angle(transform.forward, lookDirection) > 1)
             {
                 //rotate the player
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), rotTime * Time.deltaTime);
+                //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), rotTime * Time.deltaTime);
             }
             //set to current rotation if difference is less than 1 but exists
             else if (transform.rotation != Quaternion.LookRotation(lookDirection))
             {
                 //rotate the player
-                transform.rotation = Quaternion.LookRotation(lookDirection);
+                //transform.rotation = Quaternion.LookRotation(lookDirection);
             }
 
         }
@@ -103,16 +100,16 @@ public class controller : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) != Vector3.zero)
-                thrower.Throw(direction);
+                thrower.Throw(inputDirection);
             else
                 thrower.Throw(transform.forward);
         }
     }
     void FixedUpdate()
     {
-        if (direction != Vector3.zero)
+        if (inputDirection != Vector3.zero)
         {
-            character.MovePosition(transform.position + direction * playerSpeed * Time.deltaTime);
+            character.MovePosition(transform.position + inputDirection * playerSpeed * Time.deltaTime);
         }
     }
 }
