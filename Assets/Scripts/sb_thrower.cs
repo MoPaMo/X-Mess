@@ -10,7 +10,7 @@ public class sb_thrower : MonoBehaviour
     public GameObject projectile;
     public void Throw(Vector3 direction)
     {
-
+        FindObjectOfType<AudioManager>().Play("Snowball Throw");
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         GameObject newProjectile = Instantiate(projectile, pos, Quaternion.identity);
         direction = direction * force;
