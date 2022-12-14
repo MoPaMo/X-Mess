@@ -46,7 +46,7 @@ public class controller : MonoBehaviour
             }
             if (other.gameObject.CompareTag("Interactable"))
             {
-
+                OpenHintText.text("REDEN [F]");
                 isInteractable = true;
                 interactableObj = other.gameObject;
             }
