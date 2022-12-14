@@ -56,10 +56,10 @@ public class controller : MonoBehaviour
         direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
         direction = direction.normalized;
 
-        if (direction != Vector3.zero && FindObjectOfType<AudioManager>().getSound("Footstep Snow").source.isPlaying == false)
+        if (direction != Vector3.zero && FindObjectOfType<AudioManager>().getSound("Footstep Snow").source.isPlaying == false && FindObjectOfType<AudioManager>().getSound("Footstep House").source.isPlaying == false)
         {
             if (isInHouse)
-                FindObjectOfType<AudioManager>().Play("Footstep");
+                FindObjectOfType<AudioManager>().Play("Footstep House");
             else
                 FindObjectOfType<AudioManager>().Play("Footstep Snow");
         }

@@ -1331,7 +1331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportPosition: {x: 0, y: 0, z: 0}
-  leadingInside: 0
+  leadingInside: 1
 --- !u!1 &1499793824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,6 +1699,15 @@ MonoBehaviour:
     volumeVariance: 0.494
     pitch: 1
     pitchVariance: 0.292
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Footstep House
+    clip: {fileID: 8300000, guid: 90ac3500c692f4b48acbe50ff4bd0953, type: 3}
+    volume: 0.207
+    volumeVariance: 0.131
+    pitch: 1
+    pitchVariance: 0.33
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
