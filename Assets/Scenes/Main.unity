@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245eed2a344574dc7bb62f8dc89c9b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angle: 10
+  angle: 60
   force: 1000
   projectile: {fileID: 3555623907599274081, guid: 88659aea66c68493fbb0143dbd5508ad, type: 3}
 --- !u!54 &1499793832
@@ -1686,7 +1686,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Snowball Throw
     clip: {fileID: 8300000, guid: 117fcbf49126f419b9a3c7ab8d4d8051, type: 3}
-    volume: 1
+    volume: 0.045
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
