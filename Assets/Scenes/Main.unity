@@ -1693,6 +1693,15 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Footstep Snow
+    clip: {fileID: 8300000, guid: 6e28b4bb6ab4446b3a3096da8088fb11, type: 3}
+    volume: 0.016
+    volumeVariance: 0.494
+    pitch: 1
+    pitchVariance: 0.292
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!1 &1824834289
 GameObject:
   m_ObjectHideFlags: 0
