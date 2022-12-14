@@ -10,16 +10,22 @@ public class controller : MonoBehaviour
     private Vector3 lookDirection = Vector3.zero;
     public float rotTime = 5;
     public bool isInHouse = false;
-
+    public bool hasSetHint = false;
     private bool isInteractable = false;
     private GameObject interactableObj = null;
     public sb_thrower thrower;
     // Start is called before the first frame update
     private GameObject cam;
+    private GameObject OpenHint;
+    private OpenHintScript OpenHintText;
+    private Collider doorCollider = null;
 
     void Start()
     {
         cam = GameObject.Find("Main Camera");
+        OpenHint = GameObject.Find("Open Hint");
+        OpenHintText = GameObject.Find("Open Hint Text").GetComponent<OpenHintScript>();
+        OpenHint.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -27,26 +33,39 @@ public class controller : MonoBehaviour
         //check if the collider has the door tag
         if (other.gameObject.CompareTag("Door"))
         {
-            //get the door properties
-            DoorProperties doorProperties = other.gameObject.GetComponent<DoorProperties>();
-            transform.position = doorProperties.teleportPosition;
+            doorCollider = other;
 
-            //set is inside house
-            isInHouse = doorProperties.leadingInside;
-        }
-        if (other.gameObject.CompareTag("Interactable"))
-        {
+            {
+                if (!hasSetHint)
+                {
+                    hasSetHint = true;
+                    OpenHint.SetActive(true);
+                    OpenHintText.text("ÖFFNEN [F]");
+                }
 
-            isInteractable = true;
-            interactableObj = other.gameObject;
+            }
+            if (other.gameObject.CompareTag("Interactable"))
+            {
+
+                isInteractable = true;
+                interactableObj = other.gameObject;
+            }
         }
     }
     void OnTriggerExit(Collider other)
     {
+        doorCollider = null;
         if (other.gameObject.CompareTag("Interactable"))
         {
             isInteractable = false;
             interactableObj = null;
+        }
+        else if (other.gameObject.CompareTag("Door"))
+        {
+            hasSetHint = false;
+            //hide ui object open hint
+            OpenHint.SetActive(false);
+
         }
     }
 
@@ -107,6 +126,16 @@ public class controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && isInteractable)
         {
             Debug.Log(interactableObj.GetComponent<DialogueProperties>().dialog);
+        }
+        if (Input.GetKeyDown(KeyCode.F) && hasSetHint && doorCollider != null)
+        {
+            //get the door properties
+            DoorProperties doorProperties = doorCollider.gameObject.GetComponent<DoorProperties>();
+            transform.position = doorProperties.teleportPosition;
+            FindObjectOfType<AudioManager>().Play("Door Enter");
+
+            //set is inside house
+            isInHouse = doorProperties.leadingInside;
         }
         if (Input.GetMouseButtonDown(0))
         {

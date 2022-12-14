@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &59794351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ RectTransform:
   m_GameObject: {fileID: 59794350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.11465913, y: 0.07461797, z: 0.14559889}
+  m_LocalScale: {x: 0.097068466, y: 0.114851974, z: 0.2241058}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 215309953}
@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 84.46509, y: 21.467041}
+  m_AnchoredPosition: {x: 94.81029, y: 21.467041}
   m_SizeDelta: {x: -8.7323, y: -199.6372}
   m_Pivot: {x: 0.50000024, y: 0.49999994}
 --- !u!114 &59794352
@@ -211,8 +211,9 @@ GameObject:
   - component: {fileID: 215309953}
   - component: {fileID: 215309955}
   - component: {fileID: 215309954}
+  - component: {fileID: 215309956}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Open Hint Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,7 +228,7 @@ RectTransform:
   m_GameObject: {fileID: 215309952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.73732054, y: 1.1329782, z: 0.58064}
+  m_LocalScale: {x: 1.3405465, y: 1.1329782, z: 0.58063996}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 59794351}
@@ -235,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -88.10208, y: 190.37634}
+  m_AnchoredPosition: {x: -160.18137, y: 190.3762}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215309954
@@ -258,7 +259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press F to pay respects
+  m_text: "\xD6FFNEN [F]"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f93b26875ca1c476b82c8a789bceb928, type: 2}
   m_sharedMaterial: {fileID: 3546988192845175881, guid: f93b26875ca1c476b82c8a789bceb928, type: 2}
@@ -285,14 +286,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 164.85
+  m_fontSize: 135.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 720
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -321,7 +322,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -257.92822, y: 65.52881, z: -511.50928, w: -270.00024}
+  m_margin: {x: -257.92822, y: 106.16016, z: -425.96973, w: -227.23035}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -335,6 +336,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215309952}
   m_CullTransparentMesh: 1
+--- !u!114 &215309956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215309952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb30ab4f4e2f43369a12e618a0d29d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textM: {fileID: 215309954}
 --- !u!1 &287302973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,8 +1265,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3907049, y: 0.42895734, z: 2.7759743}
+  m_Center: {x: -0.101868846, y: -0.28552166, z: -0.88798714}
 --- !u!23 &1144298661
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1448,6 +1462,7 @@ MonoBehaviour:
   playerSpeed: 10
   rotTime: 5
   isInHouse: 0
+  hasSetHint: 0
   thrower: {fileID: 1499793831}
 --- !u!114 &1499793831
 MonoBehaviour:
@@ -1705,6 +1720,15 @@ MonoBehaviour:
   - name: Footstep House
     clip: {fileID: 8300000, guid: 90ac3500c692f4b48acbe50ff4bd0953, type: 3}
     volume: 0.207
+    volumeVariance: 0.131
+    pitch: 1
+    pitchVariance: 0.33
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Door Enter
+    clip: {fileID: 8300000, guid: e594736a61445489c95cdc38f86a66e6, type: 3}
+    volume: 0.091
     volumeVariance: 0.131
     pitch: 1
     pitchVariance: 0.33
