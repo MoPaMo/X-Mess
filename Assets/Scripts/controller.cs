@@ -58,7 +58,10 @@ public class controller : MonoBehaviour
 
         if (direction != Vector3.zero && FindObjectOfType<AudioManager>().getSound("Footstep Snow").source.isPlaying == false)
         {
-            FindObjectOfType<AudioManager>().Play("Footstep Snow");
+            if (isInHouse)
+                FindObjectOfType<AudioManager>().Play("Footstep");
+            else
+                FindObjectOfType<AudioManager>().Play("Footstep Snow");
         }
         //define look direction, that's not set to 0 if the player is not moving
         if (new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) != Vector3.zero)
