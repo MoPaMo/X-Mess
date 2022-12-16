@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 public class showmessage: MonoBehaviour
 {
     public RectTransform rt;
@@ -8,6 +10,8 @@ public class showmessage: MonoBehaviour
     float offscreen = 0f;
     public bool shown = false;
     float vel = 0f;
+    public TextMeshProUGUI text;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -43,12 +47,14 @@ public class showmessage: MonoBehaviour
         }
     }
     //create function message to change position
-    public void message()
+    public void message(string s)
     {
+
         //if current position is offscreen, move to onscreen
         if (rt.anchoredPosition.x == offscreen)
         {
             shown = true;
         }
+        text.text=s;
     }
 }

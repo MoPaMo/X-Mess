@@ -8,6 +8,8 @@ public class UIScript : MonoBehaviour
     public Image BlendOutImg;
     private bool isFading = false;
     private float alpha =0f;
+    public showdialogue showDialogue;
+    public showmessage showMessage;
     void Start(){
 
     }
@@ -22,11 +24,18 @@ public class UIScript : MonoBehaviour
                 isFading=false;
             }
         }
-        
+
 
     }
     public void fadeOut(){
         alpha=1f;
         isFading=true;
+    }
+
+    public void dialogue(string s){
+        showDialogue.message(s);
+    }
+    public void message(string s){
+        showMessage.message(s);
     }
 }

@@ -50,7 +50,7 @@ public class showdialogue : MonoBehaviour
         }
     }
     //create function message to change position
-    public void message()
+    public void message(string s)
     {
         //if current position is offscreen, move to onscreen
         if (rt_d.anchoredPosition.y == offscreen_d)
