@@ -642,8 +642,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc5e7b532d1646a7b1a84a22f65f9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rt: {fileID: 375096957}
-  shown: 0
+  rt_d: {fileID: 375096957}
+  shown_d: 0
 --- !u!1 &420661396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,6 +2049,7 @@ GameObject:
   - component: {fileID: 2102411300}
   - component: {fileID: 2102411299}
   - component: {fileID: 2102411298}
+  - component: {fileID: 2102411302}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -2142,6 +2143,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2102411302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102411297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b26c280178b44ca08f7363761b4a83c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Img: {fileID: 0}
 --- !u!1 &2110722179
 GameObject:
   m_ObjectHideFlags: 0
