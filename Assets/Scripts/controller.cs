@@ -13,12 +13,16 @@ public class controller : MonoBehaviour
     public bool hasSetHint = false;
     private bool isInteractable = false;
     private GameObject interactableObj = null;
-    public sb_thrower thrower;
-    // Start is called before the first frame update
+
+
     private GameObject cam;
     private GameObject OpenHint;
     private OpenHintScript OpenHintText;
     private Collider doorCollider = null;
+
+    //scripts
+    public sb_thrower thrower;
+    private blendOutScript blendOut;
 
     void Start()
     {
@@ -26,6 +30,7 @@ public class controller : MonoBehaviour
         OpenHint = GameObject.Find("Open Hint");
         OpenHintText = GameObject.Find("Open Hint Text").GetComponent<OpenHintScript>();
         OpenHint.SetActive(false);
+        blendOut = GameObject.Find("Blend Out").GetComponent<blendOutScript>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -129,6 +134,9 @@ public class controller : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F) && hasSetHint && doorCollider != null)
         {
+            //fade in
+            blendOut.show();
+
             //get the door properties
             DoorProperties doorProperties = doorCollider.gameObject.GetComponent<DoorProperties>();
             transform.position = doorProperties.teleportPosition;
