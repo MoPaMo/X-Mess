@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class UIScript : MonoBehaviour
 {
-    public Image Img;
+    public Image BlendOutImg;
     private bool isFading = false;
     private float alpha =0f;
     void Start(){
-        Img = GetComponent<Image>();
-        
+
     }
 
     void Update(){
@@ -18,11 +17,12 @@ public class UIScript : MonoBehaviour
         if(isFading){
             if(alpha>0f){
             alpha -= Time.deltaTime;
-            Img.color = new Color(0f,0f,0f,alpha);}
+            BlendOutImg.color = new Color(0f,0f,0f,alpha);}
             else{
                 isFading=false;
             }
         }
+        
 
     }
     public void fadeOut(){

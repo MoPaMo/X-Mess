@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b26c280178b44ca08f7363761b4a83c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Img: {fileID: 0}
+  BlendOutImg: {fileID: 137557130}
 --- !u!1 &2110722179
 GameObject:
   m_ObjectHideFlags: 0
