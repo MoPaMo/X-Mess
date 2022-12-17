@@ -12,7 +12,7 @@ public class showmessage: MonoBehaviour
     float vel = 0f;
     public TextMeshProUGUI text;
   public float timeShown = 10f;
-    public float timeShownCounter = -69f;
+    private float timeShownCounter = -69f;
     // Start is called before the first frame update
     void Start()
     {
