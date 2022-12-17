@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 public class showdialogue : MonoBehaviour
 {
     public RectTransform rt_d;
@@ -9,6 +11,7 @@ public class showdialogue : MonoBehaviour
     public bool shown_d = false;
     float vel_d = 0f;
     // Start is called before the first frame update
+    public TextMeshProUGUI text_d;
     void Start()
     {
         //get current position on canvas
@@ -57,5 +60,6 @@ public class showdialogue : MonoBehaviour
         {
             shown_d = true;
         }
+        text_d.text = s;
     }
 }

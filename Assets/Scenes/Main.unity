@@ -1441,7 +1441,7 @@ GameObject:
   - component: {fileID: 1499793831}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1735,6 +1735,7 @@ GameObject:
   - component: {fileID: 1727249134}
   - component: {fileID: 1727249133}
   - component: {fileID: 1727249132}
+  - component: {fileID: 1727249137}
   m_Layer: 0
   m_Name: DialogueTestObject
   m_TagString: Untagged
@@ -1826,13 +1827,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727249131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5047898, y: 0.30503237, z: -0.39966655}
+  m_LocalPosition: {x: 3, y: 0.30503237, z: -0.39966655}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1727249137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727249131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6f0621ad4ba421cb895f3449249ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phrases:
+  - Hi
+  - Don't eat yellow snow!
 --- !u!1 &1803143134
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,8 +2271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlendOutImg: {fileID: 137557130}
-  showDialogue: {fileID: 0}
-  showMessage: {fileID: 0}
+  showDialogue: {fileID: 375096960}
+  showMessage: {fileID: 747673833}
 --- !u!1 &2110722179
 GameObject:
   m_ObjectHideFlags: 0

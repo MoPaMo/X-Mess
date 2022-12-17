@@ -81,7 +81,7 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dialogueMode){
+        if(!dialogueMode){
             direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
             direction = direction.normalized;
 
@@ -135,7 +135,7 @@ public class controller : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F) && isInteractable)
             {
-                Debug.Log(interactableObj.GetComponent<DialogueProperties>().dialog);
+                Debug.Log(interactableObj.GetComponent<DialogueProperties>());
             }
             if (Input.GetKeyDown(KeyCode.F) && hasSetHint && doorCollider != null)
             {

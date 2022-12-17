@@ -33,6 +33,7 @@ public class UIScript : MonoBehaviour
     }
 
     public void dialogue(string s){
+        Debug.Log("dialogue");
         showDialogue.message(s);
     }
     public void message(string s){
