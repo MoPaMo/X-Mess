@@ -28,6 +28,10 @@ public class controller : MonoBehaviour
 
     void Start()
     {
+        if(!isInHouse){
+            FindObjectOfType<AudioManager>().Play("Snow Background");
+
+        }
         cam = GameObject.Find("Main Camera");
         OpenHint = GameObject.Find("Open Hint");
         OpenHintText = GameObject.Find("Open Hint Text").GetComponent<OpenHintScript>();
@@ -152,10 +156,14 @@ public class controller : MonoBehaviour
 
                 //set is inside house
                 isInHouse = doorProperties.leadingInside;
-                if(isInHouse)//turn of particles
+                if(isInHouse){
                     FindObjectOfType<ParticleSystem>().Stop();
-                else
+                    FindObjectOfType<AudioManager>().Stop("Snow Background");
+                    }
+                else{
                     FindObjectOfType<ParticleSystem>().Play();
+                    FindObjectOfType<AudioManager>().Play("Snow Background");}
+
                      
 
             }

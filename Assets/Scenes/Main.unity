@@ -2052,7 +2052,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Snow Background
     clip: {fileID: 8300000, guid: 1136bbca8ee674f8c9f6bf58d4504f07, type: 3}
-    volume: 0.031
+    volume: 0.009
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0.038
