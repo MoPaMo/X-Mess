@@ -11,7 +11,8 @@ public class showmessage: MonoBehaviour
     public bool shown = false;
     float vel = 0f;
     public TextMeshProUGUI text;
- 
+  public float timeShown = 10f;
+    public float timeShownCounter = -69f;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +33,24 @@ public class showmessage: MonoBehaviour
         if (shown)
         {
             if(rt.anchoredPosition.x/pos<0.995f){
-            rt.anchoredPosition = new Vector2(Mathf.SmoothDamp(rt.anchoredPosition.x, pos, ref vel, 0.5f), rt.anchoredPosition.y);}
+                rt.anchoredPosition = new Vector2(Mathf.SmoothDamp(rt.anchoredPosition.x, pos, ref vel, 0.5f), rt.anchoredPosition.y);
+            }
+           
             else{
-                rt.anchoredPosition = new Vector2(pos, rt.anchoredPosition.y);
+                if (timeShownCounter ==-69f)
+                {
+
+                    rt.anchoredPosition = new Vector2(pos, rt.anchoredPosition.y);
+                    timeShownCounter = timeShown;
+                }
+                else if(timeShownCounter>0)
+                    {
+                    timeShownCounter -= Time.deltaTime;
+
+                }else{
+                    shown = false;
+                    timeShownCounter = -69f;
+                }
             }
         }
         else
@@ -47,7 +63,7 @@ public class showmessage: MonoBehaviour
         }
     }
     //create function message to change position
-    public void message(string s)
+    public void message(string s, float time=10f)
     {
 
         //if current position is offscreen, move to onscreen

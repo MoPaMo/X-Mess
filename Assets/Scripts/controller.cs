@@ -137,6 +137,10 @@ public class controller : MonoBehaviour
             {
                 Debug.Log(interactableObj.GetComponent<DialogueProperties>());
             }
+            if(Input.GetKeyDown(KeyCode.L)){
+                //test key
+                uis.message("This is a cool message, isn't it?");
+            }
             if (Input.GetKeyDown(KeyCode.F) && hasSetHint && doorCollider != null)
             {
                 //fade in

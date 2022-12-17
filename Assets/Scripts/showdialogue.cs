@@ -38,6 +38,7 @@ public class showdialogue : MonoBehaviour
             else
             {
                 rt_d.anchoredPosition = new Vector2(rt_d.anchoredPosition.x, pos_d);
+
             }
         }
         else

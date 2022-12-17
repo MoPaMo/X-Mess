@@ -630,6 +630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rt_d: {fileID: 375096957}
   shown_d: 0
+  text_d: {fileID: 1824834291}
 --- !u!1 &420661396
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +712,7 @@ GameObject:
   - component: {fileID: 596791318}
   - component: {fileID: 596791320}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Tips Panel Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,6 +850,8 @@ MonoBehaviour:
   rt: {fileID: 596791317}
   shown: 0
   text: {fileID: 0}
+  timeShown: 10
+  timeShownCounter: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1059,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rt: {fileID: 747673830}
   shown: 0
-  text: {fileID: 0}
+  text: {fileID: 596791318}
+  timeShown: 10
+  timeShownCounter: -69
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
