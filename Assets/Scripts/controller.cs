@@ -152,6 +152,12 @@ public class controller : MonoBehaviour
 
                 //set is inside house
                 isInHouse = doorProperties.leadingInside;
+                if(isInHouse)//turn of particles
+                    FindObjectOfType<ParticleSystem>().Stop();
+                else
+                    FindObjectOfType<ParticleSystem>().Play();
+                     
+
             }
             if (Input.GetMouseButtonDown(0))
             {
