@@ -81,7 +81,7 @@ public class controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dDialogueMode){
+        if(dialogueMode){
             direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); //set direction
             direction = direction.normalized;
 
