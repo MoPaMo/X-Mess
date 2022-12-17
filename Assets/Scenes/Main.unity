@@ -630,6 +630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rt_d: {fileID: 375096957}
   shown_d: 0
+  time: 0.125
   text_d: {fileID: 1824834291}
 --- !u!1 &420661396
 GameObject:
@@ -851,7 +852,6 @@ MonoBehaviour:
   shown: 0
   text: {fileID: 0}
   timeShown: 10
-  timeShownCounter: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1061,6 @@ MonoBehaviour:
   shown: 0
   text: {fileID: 596791318}
   timeShown: 10
-  timeShownCounter: -69
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1545,7 @@ MonoBehaviour:
   rotTime: 5
   isInHouse: 0
   hasSetHint: 0
+  dialogueMode: 0
   thrower: {fileID: 1499793831}
 --- !u!114 &1499793831
 MonoBehaviour:

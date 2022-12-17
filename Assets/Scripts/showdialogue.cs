@@ -10,6 +10,7 @@ public class showdialogue : MonoBehaviour
     float offscreen_d = 0f;
     public bool shown_d = false;
     float vel_d = 0f;
+    public float time = 0.5f;
     // Start is called before the first frame update
     public TextMeshProUGUI text_d;
     void Start()
@@ -33,7 +34,7 @@ public class showdialogue : MonoBehaviour
         {
             if (rt_d.anchoredPosition.y / pos_d < 0.995f)
             {
-                rt_d.anchoredPosition = new Vector2(rt_d.anchoredPosition.x, Mathf.SmoothDamp(rt_d.anchoredPosition.y, pos_d, ref vel_d, 0.5f));
+                rt_d.anchoredPosition = new Vector2(rt_d.anchoredPosition.x, Mathf.SmoothDamp(rt_d.anchoredPosition.y, pos_d, ref vel_d, time));
             }
             else
             {
@@ -45,7 +46,7 @@ public class showdialogue : MonoBehaviour
         {
             if (rt_d.anchoredPosition.y / offscreen_d < 0.975f)
             {
-                rt_d.anchoredPosition = new Vector2(rt_d.anchoredPosition.x, Mathf.SmoothDamp(rt_d.anchoredPosition.y, offscreen_d, ref vel_d, 0.5f));
+                rt_d.anchoredPosition = new Vector2(rt_d.anchoredPosition.x, Mathf.SmoothDamp(rt_d.anchoredPosition.y, offscreen_d, ref vel_d, time));
             }
             else
             {
