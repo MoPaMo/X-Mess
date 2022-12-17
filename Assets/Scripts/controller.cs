@@ -13,7 +13,7 @@ public class controller : MonoBehaviour
     public bool hasSetHint = false;
     private bool isInteractable = false;
 
-    private bool dialogueMode = false;
+    public bool dialogueMode = false;
 
 
     //interactable objects

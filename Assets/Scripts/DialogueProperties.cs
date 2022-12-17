@@ -7,35 +7,44 @@ public class DialogueProperties : MonoBehaviour
 
     //an array of strings contains all phrases
     public string[] phrases;
-
+    private int currentPhrase = 0;
+    private bool isColliding = false;
     //on collision with player, show dialogue
     void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
-            FindObjectOfType<UIScript>().dialogue(phrases[0]);
+            isColliding = true;
+            
         }
     }
-
-    //on collision exit with player, hide dialogue
     void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<UIScript>().dialogue("");
+            isColliding = false;
+            
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        FindObjectOfType<UIScript>().dialogue("test");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.F) && isColliding){
+            if (currentPhrase >= phrases.Length)
+            {
+                GameObject.Find("Player").GetComponent<controller>().dialogueMode = false;
+                currentPhrase = 0;
+                FindObjectOfType<UIScript>().hideDialogue();
 
+            }else
+            {
+                GameObject.Find("Player").GetComponent<controller>().dialogueMode = true;
+                FindObjectOfType<UIScript>().dialogue(phrases[currentPhrase]);
+                currentPhrase++;
+
+            }
+
+        }
     }
 }

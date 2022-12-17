@@ -63,4 +63,7 @@ public class showdialogue : MonoBehaviour
         }
         text_d.text = s;
     }
+    public void hide(){
+        shown_d = false;
+    }
 }
