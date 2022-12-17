@@ -52,24 +52,32 @@ public class controller : MonoBehaviour
 
         
         }
-            else if (other.gameObject.CompareTag("Interactable"))
+        //else if other game object has dialogue properties script
+            else if (other.gameObject.CompareTag("Dialogue"))
             {
+            if (!hasSetHint)
+            {
+                hasSetHint = true;
+                OpenHint.SetActive(true);
                 OpenHintText.text("REDEN [F]");
             }
+        }
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Interactable"))
-        {
-            OpenHint.SetActive(false);
-        }
-        else if (other.gameObject.CompareTag("Door"))
+         if (other.gameObject.CompareTag("Door"))
         {
         doorCollider = null;
             hasSetHint = false;
             //hide ui object open hint
             OpenHint.SetActive(false);
 
+        }
+            else if (other.gameObject.CompareTag("Dialogue"))
+
+        {
+            hasSetHint = false;
+            OpenHint.SetActive(false);
         }
     }
 

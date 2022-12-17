@@ -1820,7 +1820,7 @@ GameObject:
   - component: {fileID: 1727249137}
   m_Layer: 0
   m_Name: DialogueTestObject
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
