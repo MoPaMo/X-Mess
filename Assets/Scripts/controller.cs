@@ -161,7 +161,7 @@ public class controller : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (direction != Vector3.zero)
+        if (direction != Vector3.zero && dialogueMode == false)
         {
             character.MovePosition(transform.position + direction * playerSpeed * Time.deltaTime);
         }
