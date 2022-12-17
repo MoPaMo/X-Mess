@@ -35,6 +35,8 @@ public class DialogueProperties : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && isColliding){
             FindObjectOfType<UIScript>().setName(charName);
             FindObjectOfType<UIScript>().setImage(avatar);
+            FindObjectOfType<AudioManager>().Play("UI Click");
+
             if (currentPhrase >= phrases.Length)
             {
                 GameObject.Find("Player").GetComponent<controller>().dialogueMode = false;
