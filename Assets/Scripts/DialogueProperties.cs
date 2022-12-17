@@ -9,6 +9,7 @@ public class DialogueProperties : MonoBehaviour
     public string[] phrases;
     private int currentPhrase = 0;
     private bool isColliding = false;
+    public string charName="Der Unbekannte";
     //on collision with player, show dialogue
     void OnTriggerEnter(Collider collision)
     {
@@ -31,6 +32,7 @@ public class DialogueProperties : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.F) && isColliding){
+            FindObjectOfType<UIScript>().setName(charName);
             if (currentPhrase >= phrases.Length)
             {
                 GameObject.Find("Player").GetComponent<controller>().dialogueMode = false;

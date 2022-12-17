@@ -41,4 +41,7 @@ public class UIScript : MonoBehaviour
     public void message(string s){
         showMessage.message(s);
     }
+    public void setName(string name){
+        showDialogue.setName(name);
+    }
 }

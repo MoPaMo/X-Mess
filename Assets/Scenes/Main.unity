@@ -362,7 +362,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 131
+  m_fontSize: 212.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -633,6 +633,7 @@ MonoBehaviour:
   shown_d: 0
   time: 0.125
   text_d: {fileID: 1824834291}
+  nameField: {fileID: 1085869008}
 --- !u!1 &420661396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,6 +1932,7 @@ MonoBehaviour:
   phrases:
   - Hi
   - Don't eat yellow snow!
+  charName: Der Unbekannte
 --- !u!1 &1803143134
 GameObject:
   m_ObjectHideFlags: 0

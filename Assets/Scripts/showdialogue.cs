@@ -13,6 +13,7 @@ public class showdialogue : MonoBehaviour
     public float time = 0.5f;
     // Start is called before the first frame update
     public TextMeshProUGUI text_d;
+    public TextMeshProUGUI nameField;
     void Start()
     {
         //get current position on canvas
@@ -66,5 +67,8 @@ public class showdialogue : MonoBehaviour
     }
     public void hide(){
         shown_d = false;
+    }
+    public void setName(string s){
+        nameField.text=s;
     }
 }
