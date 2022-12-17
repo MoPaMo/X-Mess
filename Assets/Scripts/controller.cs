@@ -11,13 +11,11 @@ public class controller : MonoBehaviour
     public float rotTime = 5;
     public bool isInHouse = false;
     public bool hasSetHint = false;
-    private bool isInteractable = false;
 
     public bool dialogueMode = false;
 
 
     //interactable objects
-    private GameObject interactableObj = null;
     private GameObject cam;
     private GameObject OpenHint;
     private OpenHintScript OpenHintText;
@@ -44,7 +42,7 @@ public class controller : MonoBehaviour
         {
             doorCollider = other;
 
-            {
+            
                 if (!hasSetHint)
                 {
                     hasSetHint = true;
@@ -52,25 +50,22 @@ public class controller : MonoBehaviour
                     OpenHintText.text("ÖFFNEN [F]");
                 }
 
-            }
-            if (other.gameObject.CompareTag("Interactable"))
+        
+        }
+            else if (other.gameObject.CompareTag("Interactable"))
             {
                 OpenHintText.text("REDEN [F]");
-                isInteractable = true;
-                interactableObj = other.gameObject;
             }
-        }
     }
     void OnTriggerExit(Collider other)
     {
-        doorCollider = null;
         if (other.gameObject.CompareTag("Interactable"))
         {
-            isInteractable = false;
-            interactableObj = null;
+            OpenHint.SetActive(false);
         }
         else if (other.gameObject.CompareTag("Door"))
         {
+        doorCollider = null;
             hasSetHint = false;
             //hide ui object open hint
             OpenHint.SetActive(false);
@@ -132,10 +127,6 @@ public class controller : MonoBehaviour
                         hit.collider.gameObject.GetComponent<Renderer>().material.color = new Color(1, 1, 1, 0.5f);
                     }
                 }*/
-            }
-            if (Input.GetKeyDown(KeyCode.F) && isInteractable)
-            {
-                Debug.Log(interactableObj.GetComponent<DialogueProperties>());
             }
             if(Input.GetKeyDown(KeyCode.L)){
                 //test key
