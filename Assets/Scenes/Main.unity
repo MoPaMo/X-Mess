@@ -634,6 +634,7 @@ MonoBehaviour:
   time: 0.125
   text_d: {fileID: 1824834291}
   nameField: {fileID: 1085869008}
+  avatar: {fileID: 1997013722}
 --- !u!1 &420661396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,6 +1934,7 @@ MonoBehaviour:
   - Hi
   - Don't eat yellow snow!
   charName: Der Unbekannte
+  avatar: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
 --- !u!1 &1803143134
 GameObject:
   m_ObjectHideFlags: 0
