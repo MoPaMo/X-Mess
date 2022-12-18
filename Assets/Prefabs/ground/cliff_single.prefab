@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5622098649720165505}
   - component: {fileID: 603389192613438448}
-  - component: {fileID: 8740482927882562962}
+  - component: {fileID: 2894617160255932836}
   m_Layer: 0
   m_Name: cliff_single
   m_TagString: Untagged
@@ -58,7 +58,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 3790096990367186571}
   m_Enabled: 1
---- !u!65 &8740482927882562962
+--- !u!65 &2894617160255932836
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
