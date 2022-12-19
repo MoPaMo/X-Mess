@@ -52,6 +52,9 @@ public class controller : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Snow Background");
 
         }
+        if(isInHouse){
+            FindObjectOfType<ParticleSystem>().Stop();
+        }
         cam = GameObject.Find("Main Camera");
         OpenHint = GameObject.Find("Open Hint");
         OpenHintText = GameObject.Find("Open Hint Text").GetComponent<OpenHintScript>();
