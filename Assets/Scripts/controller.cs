@@ -28,6 +28,26 @@ public class controller : MonoBehaviour
 
     void Start()
     {
+        //load player prefs
+        if (PlayerPrefs.HasKey("isInHouse"))
+        {
+            isInHouse = PlayerPrefs.GetInt("isInHouse") == 1;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("isInHouse", 0);
+        }
+        if (PlayerPrefs.HasKey("PlayerX")&& PlayerPrefs.HasKey("PlayerY") && PlayerPrefs.HasKey("PlayerZ"))
+        {
+            transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"), PlayerPrefs.GetFloat("PlayerZ"));
+        }else
+            {
+                PlayerPrefs.SetFloat("PlayerX", transform.position.x);
+                PlayerPrefs.SetFloat("PlayerY", transform.position.y);
+                PlayerPrefs.SetFloat("PlayerZ", transform.position.z);
+        }
+
+
         if(!isInHouse){
             FindObjectOfType<AudioManager>().Play("Snow Background");
 
@@ -37,6 +57,8 @@ public class controller : MonoBehaviour
         OpenHintText = GameObject.Find("Open Hint Text").GetComponent<OpenHintScript>();
         OpenHint.SetActive(false);
         uis = GameObject.Find("UI").GetComponent<UIScript>();
+
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -182,5 +204,16 @@ public class controller : MonoBehaviour
         {
             character.MovePosition(transform.position + direction * playerSpeed * Time.deltaTime);
         }
+    }
+
+
+
+    //on quit, store the current position in playerprefs
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.SetFloat("PlayerX", transform.position.x);
+        PlayerPrefs.SetFloat("PlayerY", transform.position.y);
+        PlayerPrefs.SetFloat("PlayerZ", transform.position.z);
+        PlayerPrefs.SetInt("isInHouse", isInHouse ? 1 : 0);
     }
 }
