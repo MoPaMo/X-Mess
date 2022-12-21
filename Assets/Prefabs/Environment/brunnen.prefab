@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5881036951748624973}
   - component: {fileID: 7364080726995848680}
   - component: {fileID: 4744136687359342882}
-  - component: {fileID: 8677956612585928309}
+  - component: {fileID: 942689206393540809}
   m_Layer: 0
   m_Name: brunnen
   m_TagString: Untagged
@@ -86,8 +86,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8677956612585928309
-SphereCollider:
+--- !u!136 &942689206393540809
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,6 +96,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3.2887459
-  m_Center: {x: 2.1604228, y: 1.7014666, z: -0.25776935}
+  m_Radius: 3.33
+  m_Height: 9.82
+  m_Direction: 2
+  m_Center: {x: 2.1604214, y: 1.7014663, z: -1.18}
