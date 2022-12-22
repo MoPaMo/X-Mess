@@ -10,6 +10,9 @@ public class UIScript : MonoBehaviour
     private float alpha =0f;
     public showdialogue showDialogue;
     public showmessage showMessage;
+
+    public GameObject hint;
+    public OpenHintScript hintText;
     void Start(){
 
     }
@@ -31,7 +34,13 @@ public class UIScript : MonoBehaviour
         alpha=1f;
         isFading=true;
     }
-
+    public void setHint(string s){
+        hint.SetActive(true);
+        hintText.text(s);
+    }
+    public void hideHint(){
+        hint.SetActive(false);
+    }
     public void dialogue(string s){
         showDialogue.message(s);
     }
