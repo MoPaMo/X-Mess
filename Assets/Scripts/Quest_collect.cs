@@ -60,6 +60,7 @@ void Start(){
                     currentPhrase = 0;
                     FindObjectOfType<UIScript>().hideDialogue();
                     phase = 2;
+                    FindObjectOfType<UIScript>().message("Sammle 5 Weißwüchslinge!");
 
                 }else
                 {
