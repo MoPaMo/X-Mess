@@ -17,6 +17,7 @@ public class Quest_collect : MonoBehaviour
     public int phase = 1;
     public int collected=0;
     public int max_collected=6;
+    private bool completed = false;
     //on collision with player, show dialogue
     void OnTriggerEnter(Collider collision)
     {
@@ -36,9 +37,18 @@ public class Quest_collect : MonoBehaviour
     }
 
     // Update is called once per frame
+void Start(){
+            if (PlayerPrefs.HasKey("collected_quest"))
+        {
+            completed = PlayerPrefs.GetInt("collected_quest") == 1;
+        }
+        if(completed){
+            Object.Destroy(this.gameObject);
+        }
+}
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F) && isColliding){
+        if(Input.GetKeyDown(KeyCode.F) && isColliding&&!completed){
             FindObjectOfType<UIScript>().setName(charName);
             FindObjectOfType<UIScript>().setImage(avatar);
             FindObjectOfType<AudioManager>().Play("UI Click");
@@ -93,6 +103,10 @@ public class Quest_collect : MonoBehaviour
                         GameObject.Find("Player").GetComponent<controller>().dialogueMode = false;
                         currentPhrase = 0;
                         FindObjectOfType<UIScript>().hideDialogue();
+                        PlayerPrefs.SetInt("collected_quest", 1);
+                        completed = true;
+                        Object.Destroy(this.gameObject);
+
                         //award one joyful star
 
                     }else
