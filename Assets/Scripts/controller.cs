@@ -165,9 +165,9 @@ public class controller : MonoBehaviour
                     }
                 }*/
             }
-            if(Input.GetKeyDown(KeyCode.L)){
-                //test key
-                uis.message("This is a cool message, isn't it?");
+            if(Input.GetKeyDown(KeyCode.H)){
+                //teleport home
+                transform.position = new Vector3(0, 10, 0);
             }
             if (Input.GetKeyDown(KeyCode.F) && hasSetHint && doorCollider != null)
             {
