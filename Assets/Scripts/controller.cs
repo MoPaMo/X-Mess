@@ -148,8 +148,8 @@ public class controller : MonoBehaviour
             }
 
             Vector3 charPos = character.transform.position; //current character postiioin
-            charPos.y += 8; //correct postition to be diagonally above
-            charPos.z -= 8;
+            charPos.y += 6; //correct postition to be diagonally above
+            charPos.z -= 6;
             if (cam.transform.position != charPos)
             {
 
