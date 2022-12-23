@@ -13,7 +13,7 @@ public class controller : MonoBehaviour
     public bool hasSetHint = false;
 
     public bool dialogueMode = false;
-
+    public Animator anim;
 
     //interactable objects
     private GameObject cam;
@@ -205,7 +205,12 @@ public class controller : MonoBehaviour
     {
         if (direction != Vector3.zero && dialogueMode == false)
         {
+            anim.SetBool("isRunning", true);
             character.MovePosition(transform.position + direction * playerSpeed * Time.deltaTime);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
         }
     }
 
