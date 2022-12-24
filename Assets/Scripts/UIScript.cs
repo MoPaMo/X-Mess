@@ -54,6 +54,6 @@ public class UIScript : MonoBehaviour
         showDialogue.setName(name);
     }
     public void setImage(Sprite img){
-        showDialogue.setImage(img);
+        //showDialogue.setImage(img);
     }
 }

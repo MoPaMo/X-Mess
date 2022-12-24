@@ -16,7 +16,6 @@ public class showdialogue : MonoBehaviour
     // Start is called before the first frame update
     public TextMeshProUGUI text_d;
     public TextMeshProUGUI nameField;
-    public Image avatar;
     void Start()
     {
         //get current position on canvas
@@ -75,6 +74,6 @@ public class showdialogue : MonoBehaviour
         nameField.text=s;
     }
     public void setImage(Sprite img){
-        avatar.sprite=img;
+
     }
 }
