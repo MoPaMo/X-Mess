@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2415943308441849449}
   - component: {fileID: 1596803380236747212}
   - component: {fileID: 3588255643820586246}
+  - component: {fileID: 3225966122374489785}
   m_Layer: 0
   m_Name: birch_2
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3225966122374489785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3084111488967300307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6909027, y: 0.6404775, z: 7.8498487}
+  m_Center: {x: 1.0291367, y: 1.0102564, z: 2.9073868}

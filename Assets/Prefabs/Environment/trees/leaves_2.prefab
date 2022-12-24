@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1608783951818964208}
   - component: {fileID: 2448928978280100693}
   - component: {fileID: 439277605684463519}
+  - component: {fileID: 6235195150472461197}
   m_Layer: 0
   m_Name: leaves_2
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6235195150472461197
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096527707615848010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.791626, y: 0.6217297, z: 3.9413366}
+  m_Center: {x: 1.0930405, y: -1.7732513, z: 2.0062866}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6711381580818423303}
   - component: {fileID: 5234453518161606466}
   - component: {fileID: 6642537867155954000}
+  - component: {fileID: 2940753528502299031}
   m_Layer: 0
   m_Name: Roundcube.002
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3563249428855405538}
   m_LocalRotation: {x: -0.3076792, y: 0.636658, z: 0.63665795, w: 0.30767944}
-  m_LocalPosition: {x: -4.715629, y: 4.2055655, z: 3.4961696}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.67156637, y: 0.67156637, z: 0.67156637}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2940753528502299031
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3563249428855405538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13087368, y: 0.17856435, z: 2.4245405}
+  m_Center: {x: 0.09739414, y: -0.5542113, z: -1.7069556}
 --- !u!1 &6950745469893518898
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7727563988130135176}
+  - component: {fileID: -3929981380069363507}
   m_Layer: 0
   m_Name: laterne
   m_TagString: Untagged
@@ -115,3 +130,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -47.568, z: 0}
+--- !u!65 &-3929981380069363507
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950745469893518898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

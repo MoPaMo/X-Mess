@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 319376809652991135}
   - component: {fileID: 3729398380755041082}
   - component: {fileID: 1451719667197595632}
+  - component: {fileID: 9158537834457956721}
   m_Layer: 0
   m_Name: ZAUN
   m_TagString: Untagged
@@ -85,3 +86,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9158537834457956721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091409501383126565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8343219, y: 29.08269, z: 9.850357}
+  m_Center: {x: 0.22978657, y: 2.474721, z: 3.797226}

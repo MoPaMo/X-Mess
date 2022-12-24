@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 224276446577808439}
   - component: {fileID: 3797398324857723794}
   - component: {fileID: 1393836467056160600}
+  - component: {fileID: 7578858759363794489}
   m_Layer: 0
   m_Name: mauer
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7578858759363794489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600978289434136205}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2503622, y: 10.702989, z: 5.0321884}
+  m_Center: {x: -0.07520669, y: -0.09779356, z: -1.4526786}
