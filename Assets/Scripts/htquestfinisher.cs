@@ -34,6 +34,7 @@ public class htquestfinisher : MonoBehaviour
                 GameObject.Find("Player").GetComponent<controller>().addCollected();
                 PlayerPrefs.SetInt("htquest_completed", 1);
             }
+                GameObject.Find("Player").GetComponent<controller>().isInHouse=false;
                 collision.gameObject.transform.position = pos;
         }
     }
