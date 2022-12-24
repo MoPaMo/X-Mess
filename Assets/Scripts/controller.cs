@@ -21,6 +21,8 @@ public class controller : MonoBehaviour
     private OpenHintScript OpenHintText;
     private Collider doorCollider = null;
 
+    public int collected=0;
+    public int maxCollected=1;
 
     //scripts
     public sb_thrower thrower;
@@ -45,6 +47,14 @@ public class controller : MonoBehaviour
                 PlayerPrefs.SetFloat("PlayerX", transform.position.x);
                 PlayerPrefs.SetFloat("PlayerY", transform.position.y);
                 PlayerPrefs.SetFloat("PlayerZ", transform.position.z);
+        }
+        if (PlayerPrefs.HasKey("collected"))
+        {
+            collected = PlayerPrefs.GetInt("collected");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("collected", 0);
         }
 
 
@@ -201,6 +211,15 @@ public class controller : MonoBehaviour
             }
         }
     }
+
+    public void addCollected(){
+        collected++;
+        if(collected >=maxCollected){
+            //win
+            uis.fadeOut();
+            dialogueMode = true;
+        }
+    }
     void FixedUpdate()
     {
         if (direction != Vector3.zero && dialogueMode == false)
@@ -223,5 +242,6 @@ public class controller : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerY", transform.position.y);
         PlayerPrefs.SetFloat("PlayerZ", transform.position.z);
         PlayerPrefs.SetInt("isInHouse", isInHouse ? 1 : 0);
+        PlayerPrefs.SetInt("collected", collected);
     }
 }

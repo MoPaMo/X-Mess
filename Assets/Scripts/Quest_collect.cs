@@ -109,6 +109,7 @@ void Start(){
                         Object.Destroy(this.gameObject);
 
                         //award one joyful star
+                        GameObject.Find("Player").GetComponent<controller>().addCollected();
 
                     }else
                     {
